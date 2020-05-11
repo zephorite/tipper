@@ -165,6 +165,7 @@ class ViewController: UIViewController {
             totalLabel.textColor = textColor
             totalTextLabel.textColor = textColor
             calculationsView.backgroundColor = UIColor(red: 37/255, green: 36/255, blue: 41/255, alpha: 1.0)
+            UITextField.appearance().keyboardAppearance = UIKeyboardAppearance.dark
         }
         else
         {
@@ -178,6 +179,7 @@ class ViewController: UIViewController {
             totalLabel.textColor = textColor
             totalTextLabel.textColor = textColor
             calculationsView.backgroundColor = UIColor(red: 157/255, green: 180/255, blue: 192/255, alpha: 1.0)
+            UITextField.appearance().keyboardAppearance = UIKeyboardAppearance.light
         }
     }
     
