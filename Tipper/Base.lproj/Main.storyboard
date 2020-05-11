@@ -143,28 +143,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eE5-PH-BDQ">
-                                <rect key="frame" x="16" y="213" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="darkModeChanged:" destination="7uQ-8t-2Dn" eventType="valueChanged" id="DrL-dM-lTc"/>
-                                </connections>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark Mode:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1s-SV-Tnn">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dark theme:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v1s-SV-Tnn">
                                 <rect key="frame" x="16" y="173" width="233" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eE5-PH-BDQ">
+                                <rect key="frame" x="16" y="202" width="49" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="darkModeChanged:" destination="7uQ-8t-2Dn" eventType="valueChanged" id="DrL-dM-lTc"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="uS0-bw-oAK"/>
                     </view>
                     <navigationItem key="navigationItem" id="kIg-Bb-Vo7"/>
                     <connections>
+                        <outlet property="darkModeLabel" destination="v1s-SV-Tnn" id="IKw-D4-c02"/>
                         <outlet property="darkModeSwitch" destination="eE5-PH-BDQ" id="0bD-zp-0eD"/>
                         <outlet property="defaultTipControl" destination="Enf-c4-gOF" id="oIv-ni-qZ4"/>
+                        <outlet property="tipAmountLabel" destination="k1Q-BJ-XJg" id="rb7-oB-FIG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPf-o2-fli" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

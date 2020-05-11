@@ -85,6 +85,8 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "currTip%")
         calculateTip(self)
+        darkmode = defaults.bool(forKey: "darkmode")
+        print(darkmode)
         checktheme()
     }
     
@@ -146,7 +148,6 @@ class ViewController: UIViewController {
         defaults.set(totalLabel.text, forKey: "total")
         defaults.set(tipControl.selectedSegmentIndex, forKey: "currTip%")
         defaults.set(billField.text, forKey: "bill")
-        defaults.set(darkmode, forKey: "darkmode")
         defaults.synchronize()
     }
     func checktheme()
@@ -157,6 +158,8 @@ class ViewController: UIViewController {
             let textColor = UIColor(red: 129/255, green: 134/255, blue: 138/255, alpha: 1.0)
             self.view.backgroundColor = UIColor.black
             billField.textColor = UIColor(red: 141/255, green: 25/255, blue: 42/255, alpha: 1.0)
+            tipControl.backgroundColor = UIColor(red: 37/255, green: 36/255, blue: 41/255, alpha: 1.0)
+            tipControl.selectedSegmentTintColor = UIColor(red: 141/255, green: 25/255, blue: 42/255, alpha: 1.0)
             tipTextLabel.textColor = textColor
             tipLabel.textColor = textColor
             totalLabel.textColor = textColor
@@ -165,7 +168,16 @@ class ViewController: UIViewController {
         }
         else
         {
-            
+            let textColor = UIColor(red: 37/255, green: 50/255, blue: 55/255, alpha: 1.0)
+            self.view.backgroundColor = UIColor(red: 224/255, green: 251/255, blue: 252/255, alpha: 1.0)
+            billField.textColor = UIColor(red: 92/255, green: 107/255, blue: 115/255, alpha: 1.0)
+            tipControl.backgroundColor = UIColor(red: 157/255, green: 180/255, blue: 192/255, alpha: 1.0)
+            tipControl.selectedSegmentTintColor = UIColor(red: 92/255, green: 107/255, blue: 115/255, alpha: 1.0)
+            tipTextLabel.textColor = textColor
+            tipLabel.textColor = textColor
+            totalLabel.textColor = textColor
+            totalTextLabel.textColor = textColor
+            calculationsView.backgroundColor = UIColor(red: 157/255, green: 180/255, blue: 192/255, alpha: 1.0)
         }
     }
     
