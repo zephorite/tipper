@@ -22,7 +22,6 @@ class ViewController: UIViewController {
     
     let defaults = UserDefaults.standard
     let currentTime = NSDate()
-    let currencySymbol = Locale.current.currencySymbol
     var keyboardHeight = CGFloat(0)
     var darkmode = false
     @objc
@@ -36,7 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tipControl.selectedSegmentIndex = defaults.integer(forKey: "currTip%")
-        billField.placeholder = currencySymbol
+        billField.placeholder = Locale.current.currencySymbol
         if (currentTime.timeIntervalSince(defaults.object(forKey: "time") as! Date) > 600 )
         {
             print(currentTime, "is the current time")
@@ -126,9 +125,11 @@ class ViewController: UIViewController {
         let tipPercentages = [0.15,0.18,0.20]
         let tip = bill * tipPercentages[tipControl.selectedSegmentIndex]
         let total = bill + tip
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
         
-        tipLabel.text = currencySymbol! + String(format: "%.2f",tip)
-        totalLabel.text = currencySymbol! + String(format: "%.2f",total)
+        tipLabel.text = formatter.string(from: NSNumber(value: tip))
+        totalLabel.text = formatter.string(from: NSNumber(value: total))
         saveCurrValues()
     }
     override func viewDidDisappear(_ animated: Bool) {
